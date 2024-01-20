@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Request</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background-color: #fdd;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loveContainer {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #c7254e;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #reactionGif {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+
+    #loveMessage {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    #instagramHandle {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666; /* Adjust color as needed */
+      display: none; /* Initially hide the Instagram handle */
+    }
+  </style>
+</head>
+<body>
+
+<div id="loveContainer">
+  <h1>Will you be my yarað«¦ girlfriend?</h1>
+  <button onclick="showReaction('sad')">No</button>
+  <button onclick="showReaction('happy')">Yes</button>
+  <p id="loveMessage"></p>
+  <div id="reactionGif"></div>
+  <p id="instagramHandle"></p>
+</div>
+
+<script>
+  function showReaction(reaction) {
+    const gifContainer = document.getElementById('reactionGif');
+    const instagramHandle = document.getElementById('instagramHandle');
+    const loveMessage = document.getElementById('loveMessage');
+    const sadGif = 'https://media.giphy.com/media/10tIjpzIu8fe0/giphy.gif';
+    const happyGif = 'https://media.giphy.com/media/Yl5aO3gdVfsQ0/giphy.gif';
+
+    // Clear existing content in gifContainer
+    gifContainer.innerHTML = '';
+    instagramHandle.style.display = 'block'; // Always show the Instagram handle
+
+    if (reaction === 'sad') {
+      gifContainer.innerHTML = '<img src="' + sadGif + '" alt="Sad GIF">';
+      loveMessage.innerText = 'Have a talk with me, yarað«¦. I am waiting for you to talk to me.';
+      instagramHandle.innerHTML = 'Instagram: loyal_jiimmy';
+    } else if (reaction === 'happy') {
+      gifContainer.innerHTML = '<img src="' + happyGif + '" alt="Happy GIF">';
+      loveMessage.innerText = 'Let\'s go on a date, yarað«¦! I really love you.';
+      instagramHandle.innerHTML = 'Date me on Instagram: <a href="https://www.instagram.com/loyal_jiimmy" target="_blank">loyal_jiimmy</a>';
+    }
+  }
+</script>
+
+</body>
+</html>
